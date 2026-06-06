@@ -738,4 +738,389 @@
     }
 
     .footer-logo {
-      fo
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--clr-white);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .footer-logo span { color: var(--clr-accent); }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      color: var(--clr-muted);
+      max-width: 350px;
+      margin: 12px 0 24px;
+    }
+
+    .footer-links {
+      display: flex; flex-direction: column; gap: 12px;
+      list-style: none;
+    }
+
+    .footer-links h4 {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 700;
+      color: var(--clr-white);
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: var(--clr-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--clr-accent);
+      padding-right: 6px;
+    }
+
+    .footer-bottom {
+      width: 100%; padding-top: 24px;
+      border-top: 1px solid var(--clr-border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      margin-top: 24px;
+      color: var(--clr-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ===========================
+       ANIMATIONS
+    =========================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 992px) {
+      .hero-inner, .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .nav-links, .nav-cta .btn-outline { display: none; }
+      .hamburger { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 576px) {
+      .section-title { font-size: 1.8rem; }
+      .hero-title { font-size: 2.2rem; }
+      .contact-form { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Nav -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <span>Go</span>Tec <span class="logo-dot"></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary">اطلب خدمة</a>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">الرئيسية</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">اتصل بنا</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="grid-bg"></div>
+    <div class="hero-orb2"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">حلول تقنية متطورة</span>
+        </div>
+        <h1 class="hero-title">
+          نحن <span class="accent">Go Tec</span><br>
+          الريادة في عالم التقنية
+        </h1>
+        <p class="hero-desc">
+          نقدم حلول برمجية وتقنية متكاملة، مصممة خصيصاً لتطوير أعمالك والارتقاء بها إلى مستويات جديدة من الاحترافية والتميز.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">خدماتنا 🚀</a>
+          <a href="#about" class="btn btn-outline">من نحن 🧐</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="stat-grid">
+            <div class="stat-item">
+              <div class="stat-num">+100</div>
+              <div class="stat-label">مشروع ناجح</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">+50</div>
+              <div class="stat-label">عميل سعيد</div>
+            </div>
+          </div>
+          <div class="progress-list">
+            <div class="progress-item">
+              <label>تطوير المواقع <span>95%</span></label>
+              <div class="progress-bar-wrap"><div class="progress-bar" style="width:95%"></div></div>
+            </div>
+            <div class="progress-item">
+              <label>الأنظمة الذكية <span>90%</span></label>
+              <div class="progress-bar-wrap"><div class="progress-bar" style="width:90%"></div></div>
+            </div>
+            <div class="progress-item">
+              <label>الأمن السيبراني <span>85%</span></label>
+              <div class="progress-bar-wrap"><div class="progress-bar" style="width:85%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ما نقدم</span>
+        <h2 class="section-title">خدماتنا الاحترافية</h2>
+        <p class="section-sub">نقدم مجموعة متكاملة من الخدمات التقنية التي تلبي احتياجات عملك بدقة وجودة عالية.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3 class="service-title">تطوير المواقع</h3>
+          <p class="service-desc">تصميم وتطوير مواقع إلكترونية عصرية وسريعة ومتوافقة مع جميع الأجهزة.</p>
+          <div class="service-arrow">المزيد <span>←</span></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3 class="service-title">تطبيقات الجوال</h3>
+          <p class="service-desc">بناء تطبيقات هواتف ذكية مبتكرة وسهلة الاستخدام تعمل على نظامي أندرويد وآي أو إس.</p>
+          <div class="service-arrow">المزيد <span>←</span></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔒</div>
+          <h3 class="service-title">الأمن السيبراني</h3>
+          <p class="service-desc">حماية شاملة لأنظمتك وبياناتك من التهديدات الرقمية وضمان أعلى معايير الأمان والخصوصية.</p>
+          <div class="service-arrow">المزيد <span>←</span></div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3 class="service-title">الذكاء الاصطناعي</h3>
+          <p class="service-desc">تطوير حلول ذكية وأنظمة تنبؤية تساعدك في اتخاذ القرارات وتحسين الكفاءة التشغيلية.</p>
+          <div class="service-arrow">المزيد <span>←</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-icon">⚛️</div>
+              <div class="tech-name">React</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🟢</div>
+              <div class="tech-name">Node.js</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🐘</div>
+              <div class="tech-name">PHP</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">📱</div>
+              <div class="tech-name">Flutter</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🎨</div>
+              <div class="tech-name">UI/UX</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">☁️</div>
+              <div class="tech-name">Cloud</div>
+            </div>
+          </div>
+        </div>
+        <div class="float-badge">
+          <div>
+            <div class="float-badge-num">+5 سنوات</div>
+            <div class="float-badge-text">من الخبرة والتميز</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-tag">قصتنا</span>
+        <h2 class="section-title">عن شركة Go Tec</h2>
+        <p class="section-sub">
+          نحن فريق من المبدعين والخبراء في مجال التقنية، نجمع بين المعرفة العميقة والشغف الكبير لتقديم حلول تقنية تحدث فرقاً حقيقياً في عالم الأعمال.
+        </p>
+        <div class="value-list">
+          <div class="value-item">
+            <div class="value-icon">⭐</div>
+            <div class="value-text">
+              <strong>الجودة أولاً</strong>
+              <p>نلتزم بأعلى معايير الجودة في كل سطر كود نكتبه وكل حل نقدمه لعملائنا.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🤝</div>
+            <div class="value-text">
+              <strong>شركاء نجاح</strong>
+              <p>نعمل جنباً إلى جنب مع عملائنا، نفهم رؤياهم ونحولها إلى واقع ملموس ومزدهر.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">⚡</div>
+            <div class="value-text">
+              <strong>سرعة وإبداع</strong>
+              <p>نقدم حلولاً سريعة دون المساس بالإبداع والتميز، لنكون دائماً في طليعة المنافسين.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-header">
+        <span class="section-tag">تواصل معنا</span>
+        <h2 class="section-title">لنبدأ مشروعك معاً 🚀</h2>
+        <p class="section-sub">هل لديك فكرة رائعة؟ نحن هنا لتحويلها إلى حقيقة. لا تتردد في التواصل معنا، وسنعود إليك في أقرب وقت ممكن.</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>الاسم الكامل</label>
+            <input type="text" placeholder="أدخل اسمك هنا..." required>
+          </div>
+          <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="example@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>عنوان المشروع</label>
+          <input type="text" placeholder="مثال: تطوير موقع شركة..." required>
+        </div>
+        <div class="form-group">
+          <label>تفاصيل المشروع</label>
+          <textarea rows="5" placeholder="اكتب تفاصيل واحتياجات مشروعك بدقة..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">إرسال الطلب 📩</button>
+        <div class="success-banner" id="successBanner">تم إرسال رسالتك بنجاح! سنتواصل معك قريباً 🎉</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="footer-logo"><span>Go</span>Tec</a>
+        <p class="footer-desc">نبني المستقبل بحلول تقنية مبتكرة ومتطورة، نرتقي بأعمالك نحو آفاق جديدة من النجاح والتميز.</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="mailto:info@gotec.com">info@gotec.com 📧</a></li>
+          <li><a href="tel:+249XXXXXXXXX">+249XXXXXXXXX 📞</a></li>
+          <li>الخرطوم، السودان 📍</li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Go Tec - جميع الحقوق محفوظة.</p>
+        <p>تصميم وتطوير بحب ❤️ بواسطة فريق Go Tec</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Header Scroll Effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when link clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Form Submit
+    const contactForm = document.getElementById('contactForm');
+    const successBanner = document.getElementById('successBanner');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      successBanner.classList.add('visible');
+      contactForm.reset();
+      setTimeout(() => {
+        successBanner.classList.remove('visible');
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
